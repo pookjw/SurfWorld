@@ -38,7 +38,13 @@ struct ModuleDetail: View {
                             OrbitToggle()
                                 .accessibilitySortPriority(2)
                         case .solar:
-                            SolarSystemToggle()
+                            HStack {
+                                SolarSystemToggle()
+                                
+                                Button("Activate with UIKit API") {
+                                    activateSolarScene()
+                                }
+                            }
                         }
                     }
                     .frame(width: textWidth, alignment: .leading)

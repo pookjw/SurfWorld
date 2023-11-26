@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FFB54222B1337A800D41349 /* tools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB54202B1337A800D41349 /* tools.mm */; };
 		C200227D2988392F00732240 /* Entity+Sunlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200227C2988392F00732240 /* Entity+Sunlight.swift */; };
 		C200227F29883B3900732240 /* GlobeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200227E29883B3900732240 /* GlobeSettings.swift */; };
 		C20197A429E3D9C900C6A20F /* SatelliteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20197A329E3D9C900C6A20F /* SatelliteEntity.swift */; };
@@ -53,8 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6FD03BD460C2666C0917AC9F /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
-		BA5D813EE652D2B6F9AA7B35 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		4FFB541F2B1337A800D41349 /* World-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World-Bridging-Header.h"; sourceTree = "<group>"; };
+		4FFB54202B1337A800D41349 /* tools.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = tools.mm; sourceTree = "<group>"; };
+		4FFB54212B1337A800D41349 /* tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		6FD03BD460C2666C0917AC9F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		BA5D813EE652D2B6F9AA7B35 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C200227C2988392F00732240 /* Entity+Sunlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Sunlight.swift"; sourceTree = "<group>"; };
 		C200227E29883B3900732240 /* GlobeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobeSettings.swift; sourceTree = "<group>"; };
 		C20197A329E3D9C900C6A20F /* SatelliteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteEntity.swift; sourceTree = "<group>"; };
@@ -183,6 +187,9 @@
 				C2A51FAE29AB0AEB00217068 /* Resources */,
 				C22D1AFA28EB403600CE0F8F /* Info.plist */,
 				C22D1AF728EB403600CE0F8F /* Preview Content */,
+				4FFB54212B1337A800D41349 /* tools.h */,
+				4FFB54202B1337A800D41349 /* tools.mm */,
+				4FFB541F2B1337A800D41349 /* World-Bridging-Header.h */,
 			);
 			path = World;
 			sourceTree = "<group>";
@@ -342,6 +349,7 @@
 				TargetAttributes = {
 					C22D1AED28EB403400CE0F8F = {
 						CreatedOnToolsVersion = 14.3;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -385,6 +393,7 @@
 				C25EFB7029DE7D1500D3CBB6 /* Entity+Trace.swift in Sources */,
 				C25AD07D29EC6C1E0012834D /* EarthEntity.swift in Sources */,
 				C200227F29883B3900732240 /* GlobeSettings.swift in Sources */,
+				4FFB54222B1337A800D41349 /* tools.mm in Sources */,
 				C205CF952919C70D0067444C /* Starfield.swift in Sources */,
 				C2A823602A859109006F6AFF /* OrbitToggle.swift in Sources */,
 				C200227D2988392F00732240 /* Entity+Sunlight.swift in Sources */,
@@ -435,7 +444,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -498,7 +507,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -552,6 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -575,6 +585,8 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "World/World-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
@@ -586,6 +598,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -608,6 +621,7 @@
 				SDKROOT = xros;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "World/World-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
