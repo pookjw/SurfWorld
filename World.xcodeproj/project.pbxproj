@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4FFB54222B1337A800D41349 /* tools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB54202B1337A800D41349 /* tools.mm */; };
+		4FFB54282B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FFB54262B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.mm */; };
 		C200227D2988392F00732240 /* Entity+Sunlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200227C2988392F00732240 /* Entity+Sunlight.swift */; };
 		C200227F29883B3900732240 /* GlobeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200227E29883B3900732240 /* GlobeSettings.swift */; };
 		C20197A429E3D9C900C6A20F /* SatelliteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20197A329E3D9C900C6A20F /* SatelliteEntity.swift */; };
@@ -57,6 +58,8 @@
 		4FFB541F2B1337A800D41349 /* World-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "World-Bridging-Header.h"; sourceTree = "<group>"; };
 		4FFB54202B1337A800D41349 /* tools.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = tools.mm; sourceTree = "<group>"; };
 		4FFB54212B1337A800D41349 /* tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		4FFB54262B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "UIApplication+mrui_requestSceneWrapper.mm"; path = "World/UIApplication+mrui_requestSceneWrapper.mm"; sourceTree = SOURCE_ROOT; };
+		4FFB54272B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = "UIApplication+mrui_requestSceneWrapper.hpp"; path = "World/UIApplication+mrui_requestSceneWrapper.hpp"; sourceTree = SOURCE_ROOT; };
 		6FD03BD460C2666C0917AC9F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		BA5D813EE652D2B6F9AA7B35 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C200227C2988392F00732240 /* Entity+Sunlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entity+Sunlight.swift"; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				C2A51FAE29AB0AEB00217068 /* Resources */,
 				C22D1AFA28EB403600CE0F8F /* Info.plist */,
 				C22D1AF728EB403600CE0F8F /* Preview Content */,
+				4FFB54272B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.hpp */,
+				4FFB54262B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.mm */,
 				4FFB54212B1337A800D41349 /* tools.h */,
 				4FFB54202B1337A800D41349 /* tools.mm */,
 				4FFB541F2B1337A800D41349 /* World-Bridging-Header.h */,
@@ -410,6 +415,7 @@
 				C25774D829E2361000A75567 /* TypeTextModifier.swift in Sources */,
 				C2F31EFE29CC02D7009742AD /* Module.swift in Sources */,
 				C2F2CA342A391D4200E1C2A2 /* EarthSettings.swift in Sources */,
+				4FFB54282B1344D000D41349 /* UIApplication+mrui_requestSceneWrapper.mm in Sources */,
 				C2F31EFC29CC01BC009742AD /* TableOfContents.swift in Sources */,
 				C2DEDA242996FAAB00F5265B /* GlobeControls.swift in Sources */,
 				C2E652D42919E41A007934BC /* SolarSystemSettings.swift in Sources */,

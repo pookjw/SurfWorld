@@ -7,9 +7,7 @@
 //
 
 #import "tools.h"
-#import <UIKit/UIKit.h>
-#import <objc/message.h>
-#import <objc/runtime.h>
+#import "UIApplication+mrui_requestSceneWrapper.hpp"
 
 extern "C" {
 void activateGlobeScene() {
@@ -19,26 +17,9 @@ void activateGlobeScene() {
         @"com.apple.SwiftUI.sceneID": @"Globe"
     };
     
-    id options = [NSClassFromString(@"MRUISceneRequestOptions") new];
-    id specification = [NSClassFromString(@"MRUISharedApplicationFullscreenSceneSpecification_SwiftUI") new];
-    reinterpret_cast<void (*)(id, SEL, BOOL)>(objc_msgSend)(options, NSSelectorFromString(@"setDisableDefocusBehavior:"), YES);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setPreferredImmersionStyle:"), 0);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setAllowedImmersionStyles:"), 0);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setSceneRequestIntent:"), 1005);
-    reinterpret_cast<void (*)(id, SEL, id)>(objc_msgSend)(options, NSSelectorFromString(@"setSpecification:"), specification);
-    [specification release];
-    
-    __kindof UIApplication *sharedApplication = reinterpret_cast<id (*)(Class, SEL)>(objc_msgSend)(NSClassFromString(@"_TtC7SwiftUIP33_ACC2C5639A7D76F611E170E831FCA49118SwiftUIApplication"), @selector(sharedApplication));
-    reinterpret_cast<void (*)(id, SEL, id, id, id)>(objc_msgSend)(sharedApplication,
-                                                                  NSSelectorFromString(@"mrui_requestSceneWithUserActivity:requestOptions:completionHandler:"),
-                                                                  userActivity,
-                                                                  options,
-                                                                  ^void (NSError * _Nullable error) {
+    [UIApplication.sharedApplication mruiw_requestVolumetricSceneWithUserActivity:userActivity completionHandler:^(NSError * _Nullable error) {
         assert(!error);
-    });
-    
-    [userActivity release];
-    [options release];
+    }];
 }
 
 void activateOrbitScene() {
@@ -48,26 +29,9 @@ void activateOrbitScene() {
         @"com.apple.SwiftUI.sceneID": @"Orbit"
     };
     
-    id options = [NSClassFromString(@"MRUISceneRequestOptions") new];
-    id specification = [NSClassFromString(@"MRUISharedApplicationFullscreenSceneSpecification_SwiftUI") new];
-    reinterpret_cast<void (*)(id, SEL, BOOL)>(objc_msgSend)(options, NSSelectorFromString(@"setDisableDefocusBehavior:"), YES);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setPreferredImmersionStyle:"), 2);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setAllowedImmersionStyles:"), 2);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setSceneRequestIntent:"), 1001);
-    reinterpret_cast<void (*)(id, SEL, id)>(objc_msgSend)(options, NSSelectorFromString(@"setSpecification:"), specification);
-    [specification release];
-    
-    __kindof UIApplication *sharedApplication = reinterpret_cast<id (*)(Class, SEL)>(objc_msgSend)(NSClassFromString(@"_TtC7SwiftUIP33_ACC2C5639A7D76F611E170E831FCA49118SwiftUIApplication"), @selector(sharedApplication));
-    reinterpret_cast<void (*)(id, SEL, id, id, id)>(objc_msgSend)(sharedApplication,
-                                                                  NSSelectorFromString(@"mrui_requestSceneWithUserActivity:requestOptions:completionHandler:"),
-                                                                  userActivity,
-                                                                  options,
-                                                                  ^void (NSError * _Nullable error) {
+    [UIApplication.sharedApplication mruiw_requestMixedImmersiveSceneWithUserActivity:userActivity completionHandler:^(NSError * _Nullable error) {
         assert(!error);
-    });
-    
-    [userActivity release];
-    [options release];
+    }];
 }
 
 void activateSolarScene() {
@@ -77,25 +41,8 @@ void activateSolarScene() {
         @"com.apple.SwiftUI.sceneID": @"Solar"
     };
     
-    id options = [NSClassFromString(@"MRUISceneRequestOptions") new];
-    id specification = [NSClassFromString(@"MRUISharedApplicationFullscreenSceneSpecification_SwiftUI") new];
-    reinterpret_cast<void (*)(id, SEL, BOOL)>(objc_msgSend)(options, NSSelectorFromString(@"setDisableDefocusBehavior:"), YES);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setPreferredImmersionStyle:"), 8);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setAllowedImmersionStyles:"), 8);
-    reinterpret_cast<void (*)(id, SEL, NSUInteger)>(objc_msgSend)(options, NSSelectorFromString(@"setSceneRequestIntent:"), 1002);
-    reinterpret_cast<void (*)(id, SEL, id)>(objc_msgSend)(options, NSSelectorFromString(@"setSpecification:"), specification);
-    [specification release];
-    
-    __kindof UIApplication *sharedApplication = reinterpret_cast<id (*)(Class, SEL)>(objc_msgSend)(NSClassFromString(@"_TtC7SwiftUIP33_ACC2C5639A7D76F611E170E831FCA49118SwiftUIApplication"), @selector(sharedApplication));
-    reinterpret_cast<void (*)(id, SEL, id, id, id)>(objc_msgSend)(sharedApplication,
-                                                                  NSSelectorFromString(@"mrui_requestSceneWithUserActivity:requestOptions:completionHandler:"),
-                                                                  userActivity,
-                                                                  options,
-                                                                  ^void (NSError * _Nullable error) {
+    [UIApplication.sharedApplication mruiw_requestFullImmersiveSceneWithUserActivity:userActivity completionHandler:^(NSError * _Nullable error) {
         assert(!error);
-    });
-    
-    [userActivity release];
-    [options release];
+    }];
 }
 }
