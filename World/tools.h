@@ -10,6 +10,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+void activateOrbitScene();
 void activateSolarScene();
 #ifdef __cplusplus
 }

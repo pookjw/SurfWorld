@@ -35,8 +35,14 @@ struct ModuleDetail: View {
                         case .globe:
                             GlobeToggle()
                         case .orbit:
-                            OrbitToggle()
-                                .accessibilitySortPriority(2)
+                            HStack {
+                                OrbitToggle()
+                                    .accessibilitySortPriority(2)
+                                
+                                Button("Activate with UIKit API") {
+                                    activateOrbitScene()
+                                }
+                            }
                         case .solar:
                             HStack {
                                 SolarSystemToggle()
