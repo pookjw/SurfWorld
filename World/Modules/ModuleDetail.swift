@@ -33,7 +33,13 @@ struct ModuleDetail: View {
 
                         switch module {
                         case .globe:
-                            GlobeToggle()
+                            HStack {
+                                GlobeToggle()
+                                
+                                Button("Activate with UIKit API") {
+                                    activateGlobeScene()
+                                }
+                            }
                         case .orbit:
                             HStack {
                                 OrbitToggle()
